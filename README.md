@@ -25,12 +25,14 @@ so that
 
 ## Deployment
 
-This app is deployed [here](https://global-fire-watch.herokuapp.com/)
+This app is deployed [here](https://still-retreat-65409.herokuapp.com/)
 
 
 ## Installation
 
 To run this application locally, please clone to repository to your local machine.
+
+This application functions in a backend enviornment at http://localhost:5000/ and a frontend enviornment at http://localhost:3000/
 
 Then run the following sets of commands in this order:
 
@@ -55,4 +57,4 @@ As this application was required to be completed in a 12 hour window some of the
 
 ## Media
 
-![](onstage-client\public\stagewood-1.JPG)
+![](onstage-client/public/stagewood-1.JPG)
