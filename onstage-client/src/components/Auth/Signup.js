@@ -52,7 +52,7 @@ function fileUpload(event) {
     const files = event.target.files;
     const formData = new FormData();
     formData.append('file', files[0])
-    formData.append('upload_preset')
+    formData.append('upload_preset', 'stagewood_assessment')
 
     axios
         .post('https://api.cloudinary.com/v1_1/dzrts5flo/image/upload', formData)

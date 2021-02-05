@@ -4,7 +4,7 @@ import { AUTH_TOKEN } from './constants';
 
 
 const httpLink = createHttpLink({
-    uri: 'https://onstage-server.herokuapp.com/'
+    uri: 'https://stagewood-server.herokuapp.com/'
 })
 
 const authLink = setContext((_, { headers }) => {
