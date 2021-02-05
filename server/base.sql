@@ -1,0 +1,10 @@
+CREATE TABLE User (
+ id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+ first_name VARCHAR(100),
+ last_name VARCHAR(100),
+ email VARCHAR(255) UNIQUE NOT NULL,
+ password VARCHAR (255),
+ profile_pic VARCHAR(255),
+ username VARCHAR(100) UNIQUE
+);
+
