@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, useState, useEffect } from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { useQuery, gql, graphql } from '@apollo/client';
+import Profile from './Profile';
+import Login from './Auth/Login';
+import Footer from './Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+// Pass in new props
+function App(props) {
+
+  const [userState, setUserState] = useState({
+    currentUserId: []
+  })
+
+  function updateUser (userId) {
+    setUserState({ currentUserId: userId })
+}
+    
+    return (
+      <div >
+      <BrowserRouter>
+      <div>
+        <Switch>
+          <Route exact path="/"
+            render={(props) => <Login userId={userState.currentUserId} onUserChange={(user) => updateUser(user)} {...props} /> } 
+          />
+          <Route exact path="/profile"
+            render={(props) => <Profile userId={userState.currentUserId} onUserChange={() => updateUser()} {...props} />}
+           />
+        </Switch>
+        <Footer />
+      </div>
+      </BrowserRouter>
     </div>
-  );
+    )
+  
 }
 
 export default App;
